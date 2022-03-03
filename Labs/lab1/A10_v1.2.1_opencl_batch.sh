@@ -60,6 +60,8 @@ error_check
 # Converting to an unsigned .aocx file
 cd bin
 printf "\\n%s\\n" "Converting to unsigned .aocx:"
+printf "modification1:"
+printf "modification2:"
 printf "Y\\nY\\n" | source $AOCL_BOARD_PACKAGE_ROOT/linux64/libexec/sign_aocx.sh -H openssl_manager -i hello_world_fpga.aocx -r NULL -k NULL -o hello_world_fpga_unsigned.aocx
 error_check
 # Programmming PAC Card
