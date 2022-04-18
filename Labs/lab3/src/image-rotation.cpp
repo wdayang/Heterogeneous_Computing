@@ -11,7 +11,7 @@
 
 using namespace sycl;
 
-// useful header files for image convolution
+// useful header files for image rotation
 #include "utils.h"
 #include "bmp-utils.h"
 #include "gold.h"
@@ -135,9 +135,9 @@ void ImageRotation(queue &q, void *image_in, void *image_out,
                     addressing_mode::clamp, filtering_mode::nearest);
 
       // angle to rotate image by
-      float theta = 315.0;
+      float theta = 200.0;
 
-      // Use parallel_for to run image convolution in parallel on device. This
+      // Use parallel_for to run image rotation in parallel on device. This
       // executes the kernel.
       //    1st parameter is the number of work items.
       //    2nd parameter is the kernel, a lambda that specifies what to do per
@@ -229,7 +229,7 @@ int main()
   }
   catch (exception const &e)
   {
-    std::cout << "An exception is caught for image convolution.\n";
+    std::cout << "An exception is caught for image rotation.\n";
     std::terminate();
   }
 
